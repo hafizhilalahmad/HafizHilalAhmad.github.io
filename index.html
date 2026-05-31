@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hafiz Hilal Ahmad — Structural Engineer & MS Researcher</title>
+<meta name="description" content="Personal academic webpage of Hafiz Hilal Ahmad, MS Structural Engineering candidate and civil engineer at NUST Islamabad. Research in earthquake engineering and seismic behaviour of masonry structures.">
+<meta name="author" content="Hafiz Hilal Ahmad">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ====================  THEME / COLORS  ==================== */
+  :root {
+    --bg: #f4efe6;
+    --bg-soft: #ece5d8;
+    --surface: #fbf8f1;
+    --ink: #20211c;
+    --ink-soft: #56564d;
+    --line: #d9d0bf;
+    --accent: #7a2e26;       /* oxblood — change this one hex to re-theme */
+    --accent-soft: #a8584f;
+    --shadow: 0 1px 2px rgba(32,33,28,.04), 0 8px 28px rgba(32,33,28,.07);
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Hanken Grotesk", system-ui, sans-serif;
+  }
+  html[data-theme="dark"] {
+    --bg: #16170f;
+    --bg-soft: #1d1e15;
+    --surface: #20211a;
+    --ink: #ece7da;
+    --ink-soft: #a7a394;
+    --line: #34352a;
+    --accent: #d98a72;
+    --accent-soft: #e3a892;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    transition: background .4s ease, color .4s ease;
+  }
+  a { color: var(--accent); text-decoration: none; transition: color .2s; }
+  a:hover { color: var(--accent-soft); }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  /* ====================  NAV  ==================== */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--ink); letter-spacing: -.01em; }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-soft); font-size: .9rem; font-weight: 500;
+    padding: 8px 12px; border-radius: 8px;
+  }
+  .nav-links a:hover { color: var(--ink); background: var(--bg-soft); }
+  .theme-btn {
+    background: none; border: 1px solid var(--line); color: var(--ink-soft);
+    cursor: pointer; border-radius: 8px; padding: 7px 11px; font-size: .85rem;
+    font-family: var(--sans); display: flex; align-items: center; gap: 6px;
+    transition: all .2s;
+  }
+  .theme-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; color: var(--ink); }
+  .hamburger svg { width: 24px; height: 24px; }
+
+  @media (max-width: 760px) {
+    .nav-links {
+      position: absolute; top: 68px; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--surface); border-bottom: 1px solid var(--line);
+      padding: 8px; box-shadow: var(--shadow);
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .nav-links.open { max-height: 460px; }
+    .nav-links a { padding: 12px; }
+    .nav-links .theme-btn { margin: 4px; }
+    .hamburger { display: block; }
+  }
+
+  /* ====================  HERO  ==================== */
+  .hero { padding: 72px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 150px 1fr; gap: 40px; align-items: start; }
+  .avatar {
+    width: 150px; height: 150px; border-radius: 50%;
+    background: linear-gradient(140deg, var(--accent), var(--accent-soft));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 3rem; color: #fff;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 3rem); font-weight: 600; line-height: 1.05; letter-spacing: -.02em; }
+  .hero .role { font-size: 1.12rem; color: var(--ink-soft); margin-top: 10px; }
+  .hero .role strong { color: var(--ink); font-weight: 600; }
+  .hero p.bio { margin-top: 20px; max-width: 60ch; color: var(--ink-soft); }
+  .socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .socials a {
+    font-size: .85rem; font-weight: 500; padding: 7px 14px;
+    border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft);
+    transition: all .2s;
+  }
+  .socials a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .cv-btn {
+    display: inline-block; margin-top: 22px; background: var(--accent); color: #fff !important;
+    padding: 11px 22px; border-radius: 10px; font-weight: 600; font-size: .92rem;
+    box-shadow: var(--shadow); transition: transform .2s, background .2s;
+  }
+  .cv-btn:hover { transform: translateY(-2px); background: var(--accent-soft); color: #fff !important; }
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+    .avatar { width: 110px; height: 110px; font-size: 2.2rem; }
+  }
+
+  /* ====================  SECTIONS  ==================== */
+  section { padding: 50px 0; border-top: 1px solid var(--line); }
+  .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 30px; flex-wrap: wrap; }
+  .section-head h2 { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; letter-spacing: -.01em; }
+  .section-head .sub { color: var(--ink-soft); font-size: .9rem; }
+  .subhead { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin: 26px 0 12px; }
+
+  /* timeline */
+  .timeline { display: flex; flex-direction: column; }
+  .entry { display: grid; grid-template-columns: 1fr auto; gap: 8px 24px; padding: 18px 0; border-bottom: 1px dashed var(--line); }
+  .entry:last-child { border-bottom: none; }
+  .entry h3 { font-size: 1.05rem; font-weight: 600; }
+  .entry .place { color: var(--accent); font-weight: 500; font-size: .92rem; margin-top: 2px; }
+  .entry .detail { color: var(--ink-soft); font-size: .92rem; margin-top: 6px; }
+  .entry .detail em { font-style: italic; }
+  .entry ul { margin: 8px 0 0 18px; color: var(--ink-soft); font-size: .92rem; }
+  .entry ul li { margin-bottom: 4px; }
+  .entry .when { color: var(--ink-soft); font-size: .85rem; text-align: right; white-space: nowrap; }
+  @media (max-width: 560px) {
+    .entry { grid-template-columns: 1fr; }
+    .entry .when { text-align: left; }
+  }
+
+  /* publication cards */
+  .pub { padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 16px; transition: transform .2s, box-shadow .2s; }
+  .pub:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .pub h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.4; }
+  .pub .authors { color: var(--ink-soft); font-size: .9rem; margin-top: 6px; }
+  .pub .authors strong { color: var(--ink); }
+  .pub .venue { color: var(--ink-soft); font-size: .88rem; font-style: italic; margin-top: 4px; }
+  .pub .tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .pub .tags a { font-size: .78rem; font-weight: 600; padding: 4px 11px; border-radius: 6px; background: var(--bg-soft); color: var(--accent); }
+  .pub .tags a:hover { background: var(--accent); color: #fff; }
+
+  /* tag list (interests, skills) */
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+  .chips span { font-size: .88rem; padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); }
+
+  .skill-row { display: grid; grid-template-columns: 180px 1fr; gap: 8px 20px; padding: 12px 0; border-bottom: 1px dashed var(--line); font-size: .94rem; }
+  .skill-row:last-child { border-bottom: none; }
+  .skill-row .label { color: var(--accent); font-weight: 600; }
+  .skill-row .val { color: var(--ink-soft); }
+  @media (max-width: 560px) { .skill-row { grid-template-columns: 1fr; gap: 2px; } }
+
+  /* contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .contact-grid h3 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); margin-bottom: 10px; }
+  .contact-grid p { margin-bottom: 6px; }
+  @media (max-width: 560px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0; text-align: center; color: var(--ink-soft); font-size: .85rem; }
+
+  /* entrance animation */
+  .reveal { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.2,.7,.3,1) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; } .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
+</style>
+</head>
+<body>
+
+<!-- ====================  NAVIGATION  ==================== -->
+<header>
+  <nav class="wrap">
+    <span class="brand">Hafiz Hilal Ahmad</span>
+    <div class="nav-links" id="menu">
+      <a href="#about">Home</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme"><span id="themeIcon">☾</span> <span id="themeLabel">Dark</span></button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- ====================  HERO / ABOUT  ==================== -->
+<main class="wrap">
+<section class="hero" id="about" style="border-top:none;">
+  <div class="hero-grid">
+    <!-- To use a photo instead of initials, replace the line below with:
+         <div class="avatar"><img src="avatar.jpg" alt="Hafiz Hilal Ahmad"></div>
+         and upload a square photo named avatar.jpg next to this file. -->
+    <div class="avatar reveal d1">HA</div>
+    <div>
+      <h1 class="reveal d1">Hafiz Hilal Ahmad</h1>
+      <p class="role reveal d2">
+        <strong>MS Structural Engineering Candidate &nbsp;·&nbsp; Civil Engineer</strong><br>
+        National University of Sciences and Technology (NUST), Islamabad<br>
+        <span style="font-size:.92rem;">Registered Engineer — Pakistan Engineering Council (PEC No. Civil/59341)</span>
+      </p>
+      <p class="bio reveal d3">
+        Hafiz Hilal Ahmad is a structural engineer and MS candidate at NUST Islamabad, combining
+        hands-on experimental research on the seismic behaviour of confined masonry with an industry
+        background in large-scale infrastructure construction. His thesis investigates the dynamic
+        performance of a confined asymmetrical masonry building through shake-table testing and
+        finite-element analysis. He is motivated to pursue doctoral research in earthquake engineering
+        and the performance-based seismic assessment of masonry structures, particularly in low- and
+        middle-income regions.
+      </p>
+      <div class="socials reveal d3">
+        <a href="mailto:hahmed@mce.nust.edu.pk">Email</a>
+        <a href="https://www.linkedin.com/in/hafizhilalahd/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=YFhHfO0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <!-- If you create an ORCID or GitHub, add them here following the same pattern. -->
+      </div>
+      <br>
+      <!-- Upload your CV PDF named cv.pdf next to this file for this button to work. -->
+      <a class="cv-btn reveal d4" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================  EDUCATION  ==================== -->
+<section id="education">
+  <div class="section-head"><h2>Education</h2></div>
+  <div class="timeline">
+
+    <div class="entry">
+      <div>
+        <h3>MS in Structural Engineering</h3>
+        <div class="place">National University of Sciences and Technology (NUST), Islamabad</div>
+        <div class="detail">CGPA: 3.38 / 4.00 &nbsp;·&nbsp; Expected completion: September 2026</div>
+        <div class="detail"><em>Thesis: “Dynamic Performance of a Confined Asymmetrical Masonry Building — Shake-Table Testing and Finite-Element Analysis.”</em></div>
+        <div class="detail">Coursework: Advanced Structural Dynamics, Finite Element Analysis, Fire Structural Engineering, Advanced Concrete Structures, Advanced Structural Mechanics.</div>
+      </div>
+      <div class="when">Oct 2023 – Present</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>BS in Civil Engineering</h3>
+        <div class="place">International Islamic University, Islamabad (IIUI)</div>
+        <div class="detail">CGPA: 3.07 / 4.00</div>
+        <div class="detail"><em>Final-year project: Structural fire rating of an office building in Islamabad.</em></div>
+      </div>
+      <div class="when">2016 – 2020</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Higher Secondary School Certificate (FSc — Pre-Engineering)</h3>
+        <div class="place">HITEC College, Taxila Cantt.</div>
+        <div class="detail">Grade: A</div>
+      </div>
+      <div class="when">Completed 2015</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Secondary School Certificate (SSC — Science)</h3>
+        <div class="place">HITEC College, Taxila Cantt.</div>
+        <div class="detail">Grade: A1</div>
+      </div>
+      <div class="when">2010 – 2012</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================  RESEARCH  ==================== -->
+<section id="research">
+  <div class="section-head"><h2>Research</h2></div>
+
+  <h3 class="subhead">Research Experience</h3>
+  <div class="timeline">
+
+    <div class="entry">
+      <div>
+        <h3>Laboratory Engineer</h3>
+        <div class="place">Structural Dynamics Lab, MCE NUST Islamabad (Risalpur Campus)</div>
+      </div>
+      <div class="when">Nov 2025 – Present</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Graduate Researcher</h3>
+        <div class="place">Department of Structural Engineering, NUST Islamabad (Risalpur Campus)</div>
+        <ul>
+          <li>Investigating the dynamic seismic performance of a confined asymmetrical masonry building through scaled shake-table testing — characterizing global response, torsional behaviour, damage progression, and failure mechanisms under recorded ground motions.</li>
+          <li>Developing finite-element (FEM) models calibrated against shake-table results to validate numerical predictions, quantify modelling uncertainties, and extend findings through parametric studies.</li>
+          <li>Hands-on work with experimental setup design, instrumentation (accelerometers, LVDTs, strain gauges), data acquisition, signal processing, and post-test damage characterization.</li>
+          <li>Nonlinear time-history analysis and macro/micro-modelling of masonry in ABAQUS, focused on confined-masonry constitutive behaviour and asymmetric in-plan response.</li>
+        </ul>
+      </div>
+      <div class="when">Oct 2023 – Oct 2025</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Undergraduate Research Assistant — Structural Fire Engineering</h3>
+        <div class="place">International Islamic University, Islamabad</div>
+        <ul>
+          <li>Investigated structural fire rating of an office building, including assessment of fire load and probabilistic temperature exposure of structural members.</li>
+          <li>Work published in a peer-reviewed journal (see Publications).</li>
+        </ul>
+      </div>
+      <div class="when">2019 – 2020</div>
+    </div>
+
+  </div>
+
+  <h3 class="subhead">Research Interests</h3>
+  <div class="chips">
+    <span>Earthquake engineering of masonry structures</span>
+    <span>Confined, unreinforced &amp; retrofitted masonry</span>
+    <span>Shake-table testing &amp; dynamic identification</span>
+    <span>Performance-based seismic assessment</span>
+    <span>Nonlinear FE modelling of masonry</span>
+    <span>Torsional / asymmetric seismic response</span>
+    <span>Seismic vulnerability &amp; risk in developing regions</span>
+  </div>
+</section>
+
+<!-- ====================  PUBLICATIONS  ==================== -->
+<section id="publications">
+  <div class="section-head"><h2>Publications</h2><span class="sub">peer-reviewed journals</span></div>
+
+  <div class="pub">
+    <h3>Assessment of Fire Load and Probabilistic Temperature for Office Buildings in Pakistan</h3>
+    <div class="authors">M. Noman, <strong>H. H. Ahmad</strong>, A. Hamza, and M. Yaqub (2022)</div>
+    <div class="venue">Civil Engineering Infrastructures Journal, pp. 1–27</div>
+    <div class="tags">
+      <a href="https://doi.org/10.22059/CEIJ.2022.341199.1827" target="_blank" rel="noopener">DOI</a>
+    </div>
+  </div>
+
+  <!-- To add a new paper, copy the .pub block above and edit it. -->
+</section>
+
+<!-- ====================  EXPERIENCE  ==================== -->
+<section id="experience">
+  <div class="section-head"><h2>Professional Experience</h2></div>
+  <div class="timeline">
+
+    <div class="entry">
+      <div>
+        <h3>Assistant Project Manager</h3>
+        <div class="place">Frontier Works Organization (FWO), Pakistan</div>
+        <ul>
+          <li>Rawalpindi Ring Road Project (Phase-I) — 38.3 km, Banth (N-5) to Thalian Interchange (M-2); supervised earthwork, structural works, and on-site planning.</li>
+          <li>Kurram Tangi Multipurpose Dam Project (Phase-I) — supervised tunnels, canals, and water-retaining structures for an 18.4 MW hydropower and 16,300-acre irrigation scheme.</li>
+          <li>Coordinated multidisciplinary site teams and contributed to project planning and progress reporting.</li>
+        </ul>
+      </div>
+      <div class="when">Apr 2022 – Oct 2023</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Site Engineer</h3>
+        <div class="place">Alzeb Burki Construction Company (SMC — Pvt) Ltd</div>
+        <ul>
+          <li>Sub-contractor to FWO on the Thall–Mirali Road (54 km) project, North Waziristan.</li>
+          <li>Ensured timely execution, on-site quality control, and adherence to engineering specifications.</li>
+        </ul>
+      </div>
+      <div class="when">Jun 2021 – Mar 2022</div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Construction Inspector (Trainee)</h3>
+        <div class="place">EA Consulting (Pvt) Ltd</div>
+        <ul>
+          <li>Site inspector during construction of a high-rise residential development in G-13, Islamabad.</li>
+        </ul>
+      </div>
+      <div class="when">Jul – Aug 2019</div>
+    </div>
+
+  </div>
+
+  <h3 class="subhead">Technical Skills</h3>
+  <div class="skill-row"><div class="label">Structural / FEM</div><div class="val">CSI ETABS, CSI SAFE, ABAQUS, SAP2000</div></div>
+  <div class="skill-row"><div class="label">BIM / CAD</div><div class="val">AutoCAD, Autodesk Revit</div></div>
+  <div class="skill-row"><div class="label">Programming &amp; Data</div><div class="val">Python (NumPy, pandas, Matplotlib), Microsoft Excel (advanced)</div></div>
+  <div class="skill-row"><div class="label">Productivity</div><div class="val">Microsoft Word, PowerPoint; LaTeX</div></div>
+  <div class="skill-row"><div class="label">Languages</div><div class="val">English (professional working), Urdu (native), Pashto (native)</div></div>
+</section>
+
+<!-- ====================  CONTACT  ==================== -->
+<section id="contact">
+  <div class="section-head"><h2>Contact</h2></div>
+  <div class="contact-grid">
+    <div>
+      <h3>Email</h3>
+      <p><a href="mailto:hahmed@mce.nust.edu.pk">hahmed@mce.nust.edu.pk</a> &nbsp;(NUST)</p>
+      <p><a href="mailto:hafizhilal8@gmail.com">hafizhilal8@gmail.com</a></p>
+      <h3 style="margin-top:20px;">Profiles</h3>
+      <p><a href="https://www.linkedin.com/in/hafizhilalahd/" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p><a href="https://scholar.google.com/citations?hl=en&user=YFhHfO0AAAAJ" target="_blank" rel="noopener">Google Scholar</a></p>
+    </div>
+    <div>
+      <h3>Location</h3>
+      <p>Islamabad, Pakistan</p>
+      <h3 style="margin-top:20px;">Affiliation</h3>
+      <p>NUST, Islamabad</p>
+      <p>Registered Engineer — PEC (Civil/59341)</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © <span id="year"></span> Hafiz Hilal Ahmad · Islamabad, Pakistan
+</footer>
+
+<script>
+  // current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // mobile menu
+  const hb = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  hb.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // theme toggle
+  const root = document.documentElement;
+  const tBtn = document.getElementById('themeBtn');
+  const tIcon = document.getElementById('themeIcon');
+  const tLabel = document.getElementById('themeLabel');
+  function setTheme(mode){
+    root.setAttribute('data-theme', mode);
+    tIcon.textContent = mode === 'dark' ? '☀' : '☾';
+    tLabel.textContent = mode === 'dark' ? 'Light' : 'Dark';
+  }
+  tBtn.addEventListener('click', () => {
+    setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+</script>
+</body>
+</html>
